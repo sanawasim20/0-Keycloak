@@ -7,6 +7,7 @@ import session from "express-session";  // Required for Google OAuth
 import passport from "passport";  // Required for Google OAuth
 import "./config/passport.js";  // Import Google OAuth configuration
 import { createProxyMiddleware } from 'http-proxy-middleware';
+import path from 'path';
 
 dotenv.config();
 import "./Models/db.js";
@@ -42,6 +43,12 @@ app.use('/keycloak', createProxyMiddleware({
 }));
 app.use(bodyParser.json());
 app.use(cors());
+
+app.use(express.static(path.join(__dirname, 'dist')));
+
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'dist', 'index.html'));
+});
 //app.use(cors(corsOptions));
 app.use('/auth', AuthRouter);
 
