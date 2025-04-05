@@ -5,7 +5,7 @@ import cors from "cors";
 import AuthRouter from "./Routes/AuthRouter.js"; 
 import session from "express-session";  // Required for Google OAuth
 import passport from "passport";  // Required for Google OAuth
-import "./config/passport.js";  // Import Google OAuth configuration
+import "./Config/Passport.js";  // Import Google OAuth configuration
 import { createProxyMiddleware } from 'http-proxy-middleware';
 import path from 'path';
 
