@@ -7,7 +7,7 @@ import session from "express-session";  // Required for Google OAuth
 import passport from "passport";  // Required for Google OAuth
 import "./Config/Passport.js";  // Import Google OAuth configuration
 import { createProxyMiddleware } from 'http-proxy-middleware';
-import path from 'path';
+import path from "path";
 
 dotenv.config();
 import "./Models/db.js";
